@@ -33,7 +33,7 @@ def main():
     results = buildGroups(students, groupCount)
     print("groups: ")
     for i in range (len(results)):
-        print("group ", i, "\n", results[i],"\n")
+        print("group ", (i+1), "\n", results[i],"\n")
 
 if __name__ == "__main__":
     main()
