@@ -20,5 +20,6 @@ def main():
         print("3) Reset existing list of students")
         choice = inputInt("option: ")
         if choice == 1:
-
+            raw_list = input("please enter student names separated by a comma, press enter when all students have been added\n")
+            students = raw_list.split(",")
 
