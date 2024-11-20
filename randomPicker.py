@@ -15,6 +15,7 @@ def selectStudent(students):
     randomNum = random.randint(0, (len(students)-1))
     print(students[randomNum])
     students.pop(randomNum)
+    return students
 
 def main():
     print("Welcome!")
@@ -29,13 +30,16 @@ def main():
             raw_list = input("please enter student names separated by a comma, press enter when all students have been added\n")
             students = raw_list.split(",")
         elif choice == 2:
-            students = selectStudent(students)
+            if len(students > 0):
+                students = selectStudent(students)
+            else:
+                print("current list of students is empty, reset list or enter a new list")
         elif choice == 3:
             students = raw_list.split(",")
         elif choice == 0:
             exit(0)
         else:
-            print("[ERROR] invalid option")
+        print(students)
 
 if __name__ == "__main__":
     main()
