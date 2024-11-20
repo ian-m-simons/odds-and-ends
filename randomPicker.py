@@ -5,21 +5,37 @@ def inputInt(prompt):
     while (not success):
         option = input(prompt)
         try:
-            option = int(groupCount)
+            option = int(option)
             success = True
         except:
             print("[ERROR] Input must be an integer")
     return option
 
+def selectStudent(students):
+    randomNum = random.randint(0, (len(students)-1))
+    print(students[randomNum])
+    students.pop(randomNum)
+
 def main():
-    
+    print("Welcome!")
     while (True):
-        print("Welcome! please select an option below!")
+        print("Please select an option below!")
         print("1) Enter new list of students")
         print("2) Select Student at random")
         print("3) Reset existing list of students")
+        print("0) Exit Program")
         choice = inputInt("option: ")
         if choice == 1:
             raw_list = input("please enter student names separated by a comma, press enter when all students have been added\n")
             students = raw_list.split(",")
+        elif choice == 2:
+            students = selectStudent(students)
+        elif choice == 3:
+            students = raw_list.split(",")
+        elif choice == 0:
+            exit(0)
+        else:
+            print("[ERROR] invalid option")
 
+if __name__ == "__main__":
+    main()
