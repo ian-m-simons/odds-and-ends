@@ -24,7 +24,7 @@ def main():
    diceCount = 2
    while True:
        print("what would you like to do?")
-       print("1) change type of dice (default 6 sided di")
+       print("1) change type of dice (default 6 sided di)")
        print("2) change number of dice (default 2)")
        print("3) roll dice")
        print("0) exit")
