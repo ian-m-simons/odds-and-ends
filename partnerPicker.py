@@ -18,6 +18,8 @@ def createPartners(students):
 
 def main():
     raw_list = input("please enter student names separated by a comma, press enter when complete\n")
+    if raw_list[-1] == ",":
+        raw_list = raw_list[0:-1]
     students = raw_list.split(",")
     partnerList = createPartners(students)
     print(partnerList)
