@@ -41,7 +41,10 @@ def main():
             students = raw_list.split(",")
         elif choice == 4:
             for i in students:
-                print(i)
+                if i[0] == " ":
+                    print(i[1:len(i)])
+                else:
+                    print(i)
         elif choice == 0:
             exit(0)
         else:
