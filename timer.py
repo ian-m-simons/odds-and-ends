@@ -20,7 +20,7 @@ def main():
     while timer > 0:
         ct = datetime.now()
         ct = ct.microsecond
-        if int(ct) >= int(dt) + 1000000:
+        if int(ct) >= int(dt) + 10000:
             print(timer, end='\r')
             timer -= 1
             dt = datetime.now()
