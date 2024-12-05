@@ -14,8 +14,7 @@ def inputInt(prompt):
 
 def main():
     timer = inputInt("Please enter time in seconds ")
-#todo change timer so it uses the seconds from date time rather than sleep
-#this will make it more accurate
+#todo currently doesn't delete last digit when no longer needed
     usefultime = datetime.now()
     savedtime = (usefultime.second*1000000) +usefultime.microsecond
     firstRun = True
