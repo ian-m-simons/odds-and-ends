@@ -1,4 +1,5 @@
 from datetime import datetime
+import time
 
 def inputInt(prompt):
     success = False
@@ -15,16 +16,26 @@ def main():
     timer = inputInt("Please enter time in seconds ")
 #todo change timer so it uses the seconds from date time rather than sleep
 #this will make it more accurate
-    dt = datetime.now()
-    dt = dt.microsecond
+    usefultime = datetime.now()
+    savedtime = (usefultime.second*1000000) +usefultime.microsecond
+    firstRun = True
     while timer > 0:
         ct = datetime.now()
-        ct = ct.microsecond
-        if int(ct) >= int(dt) + 10000:
+        currenttime = (ct.second*1000000)+ct.microsecond
+        if firstRun:
             print(timer, end='\r')
             timer -= 1
-            dt = datetime.now()
-            dt = dt.microsecond
+            firstRun = False
+        if currenttime >= savedtime + 1000000:
+            if timer >1:
+                print(timer, end='\r')
+                timer -= 1
+                usefultime = datetime.now()
+                savedtime = (usefultime.second *1000000) + usefultime.microsecond
+            else:
+                print(timer)
+                timer -= 1
+                time.sleep(1)
         else:
             pass
         
