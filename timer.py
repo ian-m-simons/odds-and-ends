@@ -16,21 +16,21 @@ def main():
     timer = inputInt("Please enter time in seconds ")
 #todo at the change of minute seconds and microseconds reset to 0 and timer freezes
     usefultime = datetime.now()
-    savedtime = (usefultime.second*1000000) +usefultime.microsecond
+    savedtime = usefultime.timestamp()
     firstRun = True
     while timer > 0:
         ct = datetime.now()
-        currenttime = (ct.second*1000000)+ct.microsecond
+        currenttime = ct.timestamp()
         if firstRun:
             print(str(timer)+"     ", end='\r')
             timer -= 1
             firstRun = False
-        if currenttime >= savedtime + 1000000:
+        if currenttime >= savedtime + 1:
             if timer >1:
                 print(str(timer)+"     ", end='\r')
                 timer -= 1
                 usefultime = datetime.now()
-                savedtime = (usefultime.second *1000000) + usefultime.microsecond
+                savedtime = usefultime.timestamp()
             else:
                 print(str(timer))
                 timer -= 1
