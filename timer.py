@@ -22,17 +22,17 @@ def main():
         ct = datetime.now()
         currenttime = (ct.second*1000000)+ct.microsecond
         if firstRun:
-            print(timer, end='\r')
+            print(str(timer)+"     ", end='\r')
             timer -= 1
             firstRun = False
         if currenttime >= savedtime + 1000000:
             if timer >1:
-                print(timer, end='\r')
+                print(str(timer)+"     ", end='\r')
                 timer -= 1
                 usefultime = datetime.now()
                 savedtime = (usefultime.second *1000000) + usefultime.microsecond
             else:
-                print(timer)
+                print(str(timer))
                 timer -= 1
                 time.sleep(1)
         else:
