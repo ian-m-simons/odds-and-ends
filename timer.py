@@ -14,7 +14,7 @@ def inputInt(prompt):
 
 def main():
     timer = inputInt("Please enter time in seconds ")
-#todo currently doesn't delete last digit when no longer needed
+#todo at the change of minute seconds and microseconds reset to 0 and timer freezes
     usefultime = datetime.now()
     savedtime = (usefultime.second*1000000) +usefultime.microsecond
     firstRun = True
