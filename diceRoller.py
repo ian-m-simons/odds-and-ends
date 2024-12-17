@@ -31,8 +31,14 @@ def main():
        choice = inputInt("option: ")
        if choice == 1:
            sides = inputInt("how many sides should your dice have? ")
+           while sides < 3:
+               print("[ERROR] dice must have at least 3 sides")
+               sides = inputInt("how many sides should your dice have? ")
        elif choice == 2:
            diceCount = inputInt("how many dice would you like to have? ")
+           while diceCount <1:
+               print("[ERROR] must have at least one di")
+               diceCount = inputInt("how many dice would you like to have? ")
        elif choice == 3:
            rollDice(sides, diceCount)
        elif choice == 0:
