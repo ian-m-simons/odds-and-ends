@@ -22,7 +22,8 @@ def main():
         raw_list = raw_list[0:-1]
     students = raw_list.split(",")
     partnerList = createPartners(students)
-    print(partnerList)
+    for i in partnerList:
+        print(i)
 
 if __name__ == "__main__":
     main()
