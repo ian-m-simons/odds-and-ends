@@ -44,7 +44,6 @@ def buildGroupsBySize(students, groupSize):
             results.append(students)
             students = []
         index += 1
-        print(results)
     return results
 
 
@@ -52,11 +51,9 @@ def main():
     rawStudentNames = input("please enter all student names, separate names with a comma\n")
     students = rawStudentNames.split(",")
     howToGroup = inputInt("how would you like to organize your groups?\n1) Number of students in each group\n2) Number of total groups\n")
-    print(howToGroup)
     while howToGroup !=1 and howToGroup != 2:
         print("[Error] Invalid option")
         howToGroup = inputInt("how would you like to organize your grous?\n1)Number of students in each group\n2) Number of total groups\n")
-        print(howToGroup)
 
     if howToGroup == 2:
         groupCount = inputInt("please enter the desired number of groups, students will be evenly divided among the given groups ")
